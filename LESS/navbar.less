@@ -4,33 +4,52 @@
     position: fixed;
     height: 50px;
     border-bottom: 1px solid lightgrey;
-    
-    .nav-container{
+    background-color: rgba(0, 0, 255, 0);
+
+    .nav-container {
         .width-100();
         .flex();
         color: @nav-text-color;
         letter-spacing: 1px;
         padding: 10px;
-        @media @desktop{
-            width: 1280px;
+        text-decoration: none;
+        // @media @desktop{
+        //     width: 1280px;
+        // }
+        @media @phone{
+            .flex(center, center, column)
         }
         .container-left {
             .flex(left, center);
             flex: 1;
-            font-size: 12px;
+            font-size: 16px;
             span {
                 cursor: pointer;
                 margin-right: 20%;
                 font-weight: bold;
+                a{
+                    text-decoration: none;
+                    color: @nav-text-color;
+                    @media @phone {
+                        .nav-border();
+                    }
+                }
             }
+            // @media @phone{
+
+            // }
         }
         .container-center {
             .flex(center, center);
             flex: 3;
-            font-size: 10px;
-            span {
+            font-size: 14px;
+            a {
                 cursor: pointer;
                 margin-right: 5%;
+                text-decoration: none;
+                color: @nav-text-color;
+                padding: 10px;
+                border-radius: 10px;
                 &:last-child{
                     margin-right: 0;
                 }
@@ -44,8 +63,15 @@
             flex: 1;
             font-size: 12px;
             font-weight: bold;
-            span {
+            // width: 8%;
+            button {
                 cursor: pointer;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 255, 0);
+                width: 35%;
+                border: 1px solid white;
+                height: 25px;
+                color: white;
             }
         }
     }
