@@ -1,0 +1,52 @@
+.nav-bar {
+    .width-100();
+    .flex(center);
+    position: fixed;
+    height: 50px;
+    border-bottom: 1px solid lightgrey;
+    
+    .nav-container{
+        .width-100();
+        .flex();
+        color: @nav-text-color;
+        letter-spacing: 1px;
+        padding: 10px;
+        @media @desktop{
+            width: 1280px;
+        }
+        .container-left {
+            .flex(left, center);
+            flex: 1;
+            font-size: 12px;
+            span {
+                cursor: pointer;
+                margin-right: 20%;
+                font-weight: bold;
+            }
+        }
+        .container-center {
+            .flex(center, center);
+            flex: 3;
+            font-size: 10px;
+            span {
+                cursor: pointer;
+                margin-right: 5%;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:hover {
+                    background: black;
+                }
+            }
+        }
+        .container-right {
+            .flex(flex-end, center);
+            flex: 1;
+            font-size: 12px;
+            font-weight: bold;
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+}
