@@ -6,15 +6,15 @@
     overflow: hidden;
     // margin-top: 16px;
     z-index: 0;
-    @media(min-width: 1200px){
-      width: 1200px;
-    }
+    // @media(min-width: 1200px){
+    //   width: 1200px;
+    // }
     .left-button, .right-button {
       .flex(center);
       color: white;
       background-color: black;
       opacity: 0.5;
-      font-size: 40px;
+      font-size: 4rem;
       line-height: 50px;
       border-radius: 50%;
       position: absolute;
@@ -27,16 +27,25 @@
         background-color: blue;
         border: 2px solid blue;
       }
+      @media @tablet{
+
+      }
     }
     .left-button {
       top: 50%; 
       left: 25px;
       transform: translate(0, -50%);
+      @media @tablet{
+          top: 25%;
+      }
     }
     .right-button {
       top: 50%; 
       right: 25px;
       transform: translate(0, -50%);
+      @media @tablet{
+        top: 25%;
+      }
     }
     img {
       .width-100();
@@ -54,16 +63,22 @@
     left: 15%;
     h1{
         margin: 0;
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: bold;
         text-align: center;
+        p{
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+        }
     }
     p{
         text-align: center;
+        font-size: 1.6rem;
     }
     button {
         cursor: pointer;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: bold;
         border-radius: 10px;
         background-color: rgba(0, 0, 255, 0);
