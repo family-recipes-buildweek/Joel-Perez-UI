@@ -3,7 +3,7 @@ const toggleMenu = event => {
         TweenMax.to(mobileNavMenu, 1, {opacity:0, width:0})
     }
     else {
-        TweenMax.to(mobileNavMenu, 1, {opacity:1, width:150})
+        TweenMax.to(mobileNavMenu, 1, {opacity:0.7, width:150})
     }
 }
 
