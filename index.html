@@ -2,14 +2,14 @@
 <html>
 
 <head>
-  <title>Secret Family Recipes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <title>Secret Family Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script> -->
-  <!-- <script src="./components/Tabs/Tabs.js" async></script> -->
-  <script src="./Carousel/Carousel.js" async></script>
+    <script src="./Navbar/navbar.js" async></script>
+    <script src="./Carousel/Carousel.js" async></script>
 </head>
 
 <body>
@@ -40,9 +40,9 @@
    
         <div class="responsive-menu">
            <ul>
-              <li>About Us</li>
-              <li>Contact</li>
-              <li>Log In</li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Log In</a></li>
            </ul>
         </div>
    </div>
@@ -50,14 +50,14 @@
     <!-- Carousel Main page-->
     <div class="carousel">
         <div class="left-button"><</div>
-        <img src="./Img/teddy-kelley-88356-unsplash.jpg" width='100%' data-order='1' />
-        <img src="./Img/edgar-castrejon-1561392-unsplash.jpg" data-order='2' />
+        <img src="./Img/teddy-kelley-88356-unsplash.jpg" />
+        <img src="./Img/edgar-castrejon-1561392-unsplash.jpg" />
         <!-- <img src="./assets/carousel/trees.jpeg" data-order='3' />
         <img src="./assets/carousel/turntable.jpeg" data-order='4' /> -->
         <div class="right-button">></div>
     </div>
 
-    <div class="content" data-order="1">
+    <div class="main-content">
         <h1>
             <p>Secret</p>
             <p>Family</p>

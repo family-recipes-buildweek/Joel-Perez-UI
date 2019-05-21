@@ -272,6 +272,38 @@ body {
     background-color: rgba(0, 0, 255, 0);
   }
 }
+.mobile-nav .responsive-menu {
+  display: block;
+  position: fixed;
+  opacity: 0;
+  top: 35px;
+  right: 0;
+  width: 0px;
+  height: auto;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.mobile-nav .responsive-menu ul li {
+  list-style-type: none;
+  font-size: 2rem;
+  padding: 30px 0;
+  text-align: center;
+  border: 1px solid black;
+}
+.mobile-nav .responsive-menu ul li a {
+  text-decoration: none;
+  color: red;
+  opacity: 1;
+  padding: 30px 30px;
+}
+.mobile-nav .responsive-menu ul li a:hover {
+  color: white;
+}
 .carousel {
   width: 100%;
   display: flex;
@@ -315,6 +347,11 @@ body {
     top: 25%;
   }
 }
+@media (max-width: 500px) {
+  .carousel .left-button {
+    top: 20%;
+  }
+}
 .carousel .right-button {
   top: 50%;
   right: 25px;
@@ -325,11 +362,16 @@ body {
     top: 25%;
   }
 }
+@media (max-width: 500px) {
+  .carousel .right-button {
+    top: 20%;
+  }
+}
 .carousel img {
   width: 100%;
   display: none;
 }
-.content {
+.main-content {
   z-index: 1;
   color: white;
   position: absolute;
@@ -338,22 +380,22 @@ body {
   top: 15%;
   left: 15%;
 }
-.content h1 {
+.main-content h1 {
   margin: 0;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
 }
-.content h1 p {
+.main-content h1 p {
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
 }
-.content p {
+.main-content p {
   text-align: center;
   font-size: 1.6rem;
 }
-.content button {
+.main-content button {
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
@@ -363,4 +405,46 @@ body {
   border: 1px solid white;
   height: 35px;
   color: white;
+}
+@media (max-width: 800px) {
+  .main-content {
+    top: 65%;
+  }
+}
+@media (max-width: 500px) {
+  .main-content {
+    width: 50%;
+    top: 50%;
+    left: 25%;
+  }
+}
+.contentIndex0 {
+  top: 15%;
+  left: 15%;
+}
+@media (max-width: 800px) {
+  .contentIndex0 {
+    top: 65%;
+  }
+}
+@media (max-width: 500px) {
+  .contentIndex0 {
+    top: 50%;
+    left: 25%;
+  }
+}
+.contentIndex1 {
+  top: 65%;
+  left: 15%;
+}
+@media (max-width: 800px) {
+  .contentIndex1 {
+    top: 65%;
+  }
+}
+@media (max-width: 500px) {
+  .contentIndex1 {
+    top: 50%;
+    left: 25%;
+  }
 }
