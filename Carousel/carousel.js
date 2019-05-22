@@ -21,7 +21,7 @@ class Carousel{
             if (this.images.length-1 === this.currentIndex){this.currentIndex = 0}
             else {this.currentIndex += 1}
         }, 550)
-        setTimeout(() => this.updateContent(), 600)
+        setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'block',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
         TweenMax.to(this.content, 0, {display:'block',opacity:0, delay:1.5})
@@ -34,17 +34,14 @@ class Carousel{
         TweenMax.to(this.images[this.currentIndex], 0, {display:'none', delay:1})
         setTimeout(() => this.content.classList.remove(`contentIndex${this.currentIndex}`), 500)
         setTimeout(() => {
-            if (this.images.length-1 === this.currentIndex){this.currentIndex = 0}
-            else {this.currentIndex += 1}
+            if (this.currentIndex === 0){this.currentIndex = this.images.length-1}
+            else {this.currentIndex -= 1}
         }, 550)
-        setTimeout(() => this.updateContent(), 600)
+        setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'block',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
         TweenMax.to(this.content, 0, {display:'block',opacity:0, delay:1.5})
         TweenMax.to(this.content, 1, {opacity:1, delay:1.5})
-    }
-    updateContent(){
-        this.content.classList.add(`contentIndex${this.currentIndex}`)
     }
 }
 

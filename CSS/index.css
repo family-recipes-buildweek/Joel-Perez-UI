@@ -376,7 +376,7 @@ body {
   position: absolute;
   width: 20%;
   line-height: 1;
-  top: 15%;
+  top: 7%;
   left: 15%;
 }
 .main-content h1 {
@@ -418,7 +418,7 @@ body {
   }
 }
 .contentIndex0 {
-  top: 15%;
+  top: 7%;
   left: 15%;
 }
 @media (max-width: 800px) {
@@ -433,7 +433,7 @@ body {
   }
 }
 .contentIndex1 {
-  top: 65%;
+  top: 10%;
   left: 15%;
 }
 @media (max-width: 800px) {
@@ -443,6 +443,54 @@ body {
 }
 @media (max-width: 500px) {
   .contentIndex1 {
+    top: 50%;
+    left: 25%;
+  }
+}
+.contentIndex2 {
+  top: 43%;
+  left: 10%;
+}
+@media (max-width: 800px) {
+  .contentIndex2 {
+    top: 65%;
+    left: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .contentIndex2 {
+    top: 50%;
+    left: 25%;
+  }
+}
+.contentIndex3 {
+  top: 13%;
+  left: 21%;
+}
+@media (max-width: 800px) {
+  .contentIndex3 {
+    top: 65%;
+    left: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .contentIndex3 {
+    top: 50%;
+    left: 25%;
+  }
+}
+.contentIndex4 {
+  top: 10%;
+  left: 75%;
+}
+@media (max-width: 800px) {
+  .contentIndex4 {
+    top: 65%;
+    left: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .contentIndex4 {
     top: 50%;
     left: 25%;
   }
