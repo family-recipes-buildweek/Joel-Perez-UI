@@ -37,7 +37,7 @@ class Carousel{
             if (this.images.length-1 === this.currentIndex){this.currentIndex = 0}
             else {this.currentIndex += 1}
         }, 550)
-        setTimeout(() => this.updateContent(), 500)
+        setTimeout(() => this.updateContent(), 600)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'block',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
         TweenMax.to(this.content, 0, {display:'block',opacity:0, delay:1.5})
