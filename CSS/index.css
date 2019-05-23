@@ -132,14 +132,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Open Sans Condensed Light'), local('OpenSansCondensed-Light'), url(https://fonts.gstatic.com/s/opensanscondensed/v13/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMQg.ttf) format('truetype');
+}
 * {
   box-sizing: border-box;
+  font-family: 'Comic Sans MS', 'Comic Sans';
 }
 html {
   font-size: 62.5%;
 }
 body {
   background: black;
+  font-family: 'Comic Sans MS', 'Comic Sans';
+  height: auto;
+  width: auto;
 }
 .nav-bar {
   width: 100%;
@@ -214,20 +239,23 @@ body {
   align-items: center;
   flex-direction: row;
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
-.nav-bar .nav-container .container-right button {
+.nav-bar .nav-container .container-right a {
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 150%;
   border-radius: 10px;
-  background-color: rgba(0, 0, 255, 0);
+  background: rgba(0, 0, 255, 0);
   width: 50%;
   border: 1px solid white;
   height: 25px;
   color: white;
 }
 @media (max-width: 800px) {
-  .nav-bar .nav-container .container-right button {
+  .nav-bar .nav-container .container-right a {
     width: 70%;
   }
 }
@@ -239,11 +267,13 @@ body {
 .mobile-nav {
   display: none;
   background-color: rgba(0, 0, 255, 0);
+  z-index: 100;
 }
 .mobile-nav .menu-btn {
   position: absolute;
   right: 10px;
   top: 10px;
+  z-index: 100;
   cursor: pointer;
 }
 .mobile-nav .menu-btn div {
@@ -303,24 +333,25 @@ body {
 .mobile-nav .responsive-menu ul li a:hover {
   color: orangered;
 }
-.carousel {
+.container .carousel {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  position: relative;
   overflow: hidden;
   z-index: 0;
 }
-.carousel .left-button,
-.carousel .right-button {
+.container .carousel .left-button,
+.container .carousel .right-button {
   display: flex;
   justify-content: center;
   align-items: none;
   flex-direction: row;
-  color: white;
-  background-color: black;
-  opacity: 0.5;
+  color: grey;
+  background-color: rgba(0, 0, 255, 0);
+  opacity: 0.8;
   font-size: 4rem;
   line-height: 50px;
   border-radius: 50%;
@@ -330,181 +361,250 @@ body {
   cursor: pointer;
   user-select: none;
 }
-.carousel .left-button:hover,
-.carousel .right-button:hover {
+.container .carousel .left-button:hover,
+.container .carousel .right-button:hover {
   color: white;
-  background-color: blue;
-  border: 2px solid blue;
 }
-.carousel .left-button {
+.container .carousel .left-button {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
+}
+@media (max-width: 1000px) {
+  .container .carousel .left-button {
+    top: 30%;
+  }
 }
 @media (max-width: 800px) {
-  .carousel .left-button {
+  .container .carousel .left-button {
     top: 25%;
   }
 }
 @media (max-width: 500px) {
-  .carousel .left-button {
+  .container .carousel .left-button {
     top: 20%;
   }
 }
-.carousel .right-button {
+.container .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 100;
+}
+@media (max-width: 1000px) {
+  .container .carousel .right-button {
+    top: 30%;
+  }
 }
 @media (max-width: 800px) {
-  .carousel .right-button {
+  .container .carousel .right-button {
     top: 25%;
   }
 }
 @media (max-width: 500px) {
-  .carousel .right-button {
+  .container .carousel .right-button {
     top: 20%;
   }
 }
-.carousel img {
+.container .carousel img {
   width: 100%;
   display: none;
 }
-.main-content {
+.container .main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   z-index: 1;
   color: white;
   position: absolute;
   width: 20%;
   line-height: 1;
-  top: 7%;
-  left: 15%;
+  top: 10%;
+  left: 75%;
 }
-.main-content h1 {
+.container .main-content h1 {
   margin: 0;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
 }
-.main-content h1 p {
+.container .main-content h1 p {
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
+  margin: 0;
 }
-.main-content p {
+.container .main-content p {
   text-align: center;
   font-size: 1.6rem;
+  margin-top: 10px;
 }
-.main-content button {
+.container .main-content a {
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 150%;
   font-size: 2rem;
   font-weight: bold;
   border-radius: 10px;
   background-color: rgba(0, 0, 255, 0);
-  width: 100%;
-  border: 1px solid white;
+  width: 80%;
+  border: 2px solid white;
   height: 35px;
   color: white;
 }
+.container .main-content a:hover {
+  color: white;
+  background-color: #d84f00;
+}
 @media (max-width: 800px) {
-  .main-content {
-    top: 65%;
+  .container .main-content a {
+    font-size: 1.7rem;
+    top: 61%;
+    left: 15%;
   }
 }
 @media (max-width: 500px) {
-  .main-content {
+  .container .main-content a {
     width: 50%;
     top: 50%;
     left: 25%;
   }
 }
-.contentIndex0 {
+.container .contentIndex1 {
   top: 7%;
   left: 15%;
 }
 @media (max-width: 800px) {
-  .contentIndex0 {
-    top: 65%;
+  .container .contentIndex1 {
+    top: 61%;
   }
 }
 @media (max-width: 500px) {
-  .contentIndex0 {
+  .container .contentIndex1 {
     top: 50%;
     left: 25%;
   }
 }
-.contentIndex1 {
+.container .contentIndex2 {
   top: 10%;
   left: 15%;
 }
 @media (max-width: 800px) {
-  .contentIndex1 {
-    top: 65%;
+  .container .contentIndex2 {
+    top: 61%;
   }
 }
 @media (max-width: 500px) {
-  .contentIndex1 {
+  .container .contentIndex2 {
     top: 50%;
     left: 25%;
   }
 }
-.contentIndex2 {
+.container .contentIndex3 {
   top: 43%;
   left: 10%;
 }
 @media (max-width: 800px) {
-  .contentIndex2 {
-    top: 65%;
+  .container .contentIndex3 {
+    top: 61%;
     left: 15%;
   }
 }
 @media (max-width: 500px) {
-  .contentIndex2 {
+  .container .contentIndex3 {
     top: 50%;
     left: 25%;
   }
 }
-.contentIndex3 {
-  top: 13%;
-  left: 21%;
+.container .contentIndex3 {
+  top: 36%;
+  left: 73%;
 }
 @media (max-width: 800px) {
-  .contentIndex3 {
-    top: 65%;
+  .container .contentIndex3 {
+    top: 61%;
     left: 15%;
   }
 }
 @media (max-width: 500px) {
-  .contentIndex3 {
+  .container .contentIndex3 {
     top: 50%;
     left: 25%;
   }
 }
-.contentIndex4 {
+.container .contentIndex0 {
   top: 10%;
   left: 75%;
 }
 @media (max-width: 800px) {
-  .contentIndex4 {
-    top: 65%;
+  .container .contentIndex0 {
+    top: 61%;
     left: 15%;
   }
 }
 @media (max-width: 500px) {
-  .contentIndex4 {
+  .container .contentIndex0 {
     top: 50%;
     left: 25%;
+  }
+}
+.container .tablet-content {
+  display: none;
+  color: white;
+  position: absolute;
+  width: 25%;
+  bottom: 10%;
+  right: 20%;
+}
+.container .tablet-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.container .tablet-content p {
+  font-size: 1.6rem;
+  padding-top: 10px;
+  line-height: 2rem;
+}
+@media (max-width: 1000px) {
+  .container .tablet-content {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .container .tablet-content {
+    display: none;
+  }
+}
+@media (min-width: 1200) {
+  .container {
+    max-width: 1250px;
+  }
+}
+@media (min-width: 1000) {
+  .container {
+    max-width: 1050px;
+  }
+}
+@media (min-width: 800) {
+  .container {
+    max-width: 820px;
+  }
+}
+@media (min-width: 500) {
+  .container {
+    max-width: 515px;
   }
 }
 .team {
   top: 50px;
 }
 .team .team-member {
-  display: flex;
-  justify-content: none;
-  align-items: none;
-  flex-direction: row;
+  display: none;
   width: auto;
-  height: 145px;
+  height: auto;
   margin: 10px 0;
 }
 .team .team-member img {
@@ -532,6 +632,11 @@ body {
 }
 .team .team-member .github {
   margin: 50px 20px;
+}
+@media (max-width: 1000px) {
+  .team .team-member {
+    height: auto;
+  }
 }
 @media (max-width: 800px) {
   .team .team-member {

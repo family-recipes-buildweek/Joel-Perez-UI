@@ -58,13 +58,16 @@
         .container-right {
             .flex(flex-end, center);
             flex: 1;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             // width: 8%;
-            button {
+            a {
                 cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                line-height: 150%;
                 border-radius: 10px;
-                background-color: rgba(0, 0, 255, 0);
+                background: rgba(0, 0, 255, 0);
                 width: 50%;
                 border: 1px solid white;
                 height: 25px;
@@ -83,10 +86,12 @@
 .mobile-nav{
     display: none;
     background-color: rgba(0, 0, 255, 0);
+    z-index: 100;
     .menu-btn{
         position: absolute;
         right: 10px;
         top: 10px;
+        z-index: 100;
         cursor: pointer;
 
         div{

@@ -6,10 +6,17 @@ class Carousel{
         this.images = document.querySelectorAll('.carousel img');
         // console.log('images', this.images)
         this.currentIndex = 0
-        this.images[this.currentIndex].style.display = 'block';
-        this.leftButton.addEventListener('click', () => this.scrollLeft())
-        this.rightButton.addEventListener('click', () => this.scrollRight())
+        this.images[this.currentIndex].style.display = 'flex';
+        this.leftButton.addEventListener('click', () => {
+            this.scrollLeft()
+            clearInterval(this.interval)
+        })
+        this.rightButton.addEventListener('click', () => {
+            this.scrollRight()
+            clearInterval(this.interval)
+        })
         this.content = document.querySelector('.main-content')
+        this.interval = setInterval(() => this.scrollRight(), 5000);
     }
     scrollRight(){
         TweenMax.to(this.content, 0.5, {opacity:0})
@@ -22,9 +29,9 @@ class Carousel{
             else {this.currentIndex += 1}
         }, 550)
         setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
-        setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'block',opacity:0}), 1000)
+        setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'flex',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
-        TweenMax.to(this.content, 0, {display:'block',opacity:0, delay:1.5})
+        TweenMax.to(this.content, 0, {display:'flex',opacity:0, delay:1.5})
         TweenMax.to(this.content, 1, {opacity:1, delay:1.5})
     }
     scrollLeft(){
@@ -38,28 +45,12 @@ class Carousel{
             else {this.currentIndex -= 1}
         }, 550)
         setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
-        setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'block',opacity:0}), 1000)
+        setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'flex',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
-        TweenMax.to(this.content, 0, {display:'block',opacity:0, delay:1.5})
+        TweenMax.to(this.content, 0, {display:'flex',opacity:0, delay:1.5})
         TweenMax.to(this.content, 1, {opacity:1, delay:1.5})
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
