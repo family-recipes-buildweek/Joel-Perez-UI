@@ -4,7 +4,6 @@ class Carousel{
         this.leftButton = document.querySelector('.left-button');
         this.rightButton = document.querySelector('.right-button');
         this.images = document.querySelectorAll('.carousel img');
-        // console.log('images', this.images)
         this.currentIndex = 0
         this.images[this.currentIndex].style.display = 'flex';
         this.leftButton.addEventListener('click', () => {
@@ -19,34 +18,48 @@ class Carousel{
         this.interval = setInterval(() => this.scrollRight(), 7000);
     }
     scrollRight(){
+        // Fade out floating content
         TweenMax.to(this.content, 0.5, {opacity:0})
         TweenMax.to(this.content, 0, {display:'none', delay:0.5})
+        // Fade out background image
         TweenMax.to(this.images[this.currentIndex], 0.5, {opacity:0, delay:0.5})
         TweenMax.to(this.images[this.currentIndex], 0, {display:'none', delay:1})
+        // Remove class linking content box to image
         setTimeout(() => this.content.classList.remove(`contentIndex${this.currentIndex}`), 500)
+        // Increment the index
         setTimeout(() => {
             if (this.images.length-1 === this.currentIndex){this.currentIndex = 0}
             else {this.currentIndex += 1}
         }, 550)
+        // Add class matching new index
         setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
+        // Fade in new image
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'flex',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
+        // Fade in new floating content box
         TweenMax.to(this.content, 0, {display:'flex',opacity:0, delay:1.5})
         TweenMax.to(this.content, 1, {opacity:1, delay:1.5})
     }
     scrollLeft(){
+        // Fade out floating content
         TweenMax.to(this.content, 0.5, {opacity:0})
         TweenMax.to(this.content, 0, {display:'none', delay:0.5})
+        // Fade out background image
         TweenMax.to(this.images[this.currentIndex], 0.5, {opacity:0, delay:0.5})
         TweenMax.to(this.images[this.currentIndex], 0, {display:'none', delay:1})
+        // Remove class linking content box to image
         setTimeout(() => this.content.classList.remove(`contentIndex${this.currentIndex}`), 500)
+        // Increment the index
         setTimeout(() => {
             if (this.currentIndex === 0){this.currentIndex = this.images.length-1}
             else {this.currentIndex -= 1}
         }, 550)
+        // Add class matching new index
         setTimeout(() => this.content.classList.add(`contentIndex${this.currentIndex}`), 600)
+        // Fade in new image
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 0, {display:'flex',opacity:0}), 1000)
         setTimeout(() => TweenMax.to(this.images[this.currentIndex], 1, {opacity:1}), 1000)
+        // Fade in new floating content box
         TweenMax.to(this.content, 0, {display:'flex',opacity:0, delay:1.5})
         TweenMax.to(this.content, 1, {opacity:1, delay:1.5})
     }
