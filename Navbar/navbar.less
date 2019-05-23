@@ -1,0 +1,153 @@
+.nav-bar {
+    .width-100();
+    .flex(center);
+    position: fixed;
+    height: 50px;
+    border-bottom: 1px solid lightgrey;
+    background-color: rgba(0, 0, 255, 0);
+    z-index: 2;
+    .nav-container {
+        .width-100();
+        .flex();
+        color: @nav-text-color;
+        letter-spacing: 1px;
+        padding: 10px;
+        text-decoration: none;
+        // @media @desktop{
+        //     width: 1280px;
+        // }
+        .container-left {
+            .flex(left, center);
+            flex: 1;
+            font-size: 1.6rem;
+            span {
+                cursor: pointer;
+                margin-right: 20%;
+                font-weight: bold;
+                a{
+                    text-decoration: none;
+                    color: @nav-text-color;
+                    @media @phone {
+                        .nav-border();
+                    }
+                }
+            }
+            // @media @phone{
+
+            // }
+        }
+        .container-center {
+            .flex(center, center);
+            flex: 3;
+            font-size: 1.4rem;
+            a {
+                cursor: pointer;
+                margin-right: 5%;
+                text-decoration: none;
+                color: @nav-text-color;
+                padding: 10px;
+                border-radius: 10px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:hover {
+                    background: black;
+                }
+            }
+        }
+        .container-right {
+            .flex(flex-end, center);
+            flex: 1;
+            font-size: 1.5rem;
+            font-weight: bold;
+            // width: 8%;
+            a {
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                line-height: 150%;
+                border-radius: 10px;
+                background: rgba(0, 0, 255, 0);
+                width: 50%;
+                border: 1px solid white;
+                height: 25px;
+                color: white;
+                @media @tablet{
+                    width: 70%;
+                }
+            }
+        }
+    }
+    @media @phone {
+        display: none;
+    }
+}
+
+.mobile-nav{
+    display: none;
+    background-color: rgba(0, 0, 255, 0);
+    z-index: 100;
+    .menu-btn{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 100;
+        cursor: pointer;
+
+        div{
+            position: absolute;
+            left: 100%;
+            top: 64%;
+            padding-right: 8px;
+            line-height: 1.2;
+            font-size: 1.8rem;
+            font-weight: 200;
+            vertical-align: middle;
+            z-index: 99;
+        }
+        span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            margin: 4px 0;
+            background: #989da1;
+            z-index: 99;
+        }
+    }
+    @media @phone{
+        display: block;
+        z-index: 100;
+        background-color: rgba(0, 0, 255, 0);
+    }
+    .responsive-menu{
+        display: block;
+        position: fixed;
+        opacity: 0;
+        top: 35px;
+        right: 0;
+        width: 0px;
+        height: auto; /* This give the height 100% of the screen or, '100% of View Height' */
+        background-color:  black;
+        border: 1px solid white;
+        border-right: none;
+        // border-bottom: none;
+        z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+        ul li{
+            list-style-type: none;
+            font-size: 2rem;
+            padding: 30px 0;
+            text-align: center;
+            border: 1px solid white;
+            a{
+                text-decoration: none;
+                color: @nav-text-color;
+                opacity: 1;
+                padding: 30px 30px;
+                &:hover{
+                    color: orangered;
+                }
+            }
+        }
+    }
+
+}
