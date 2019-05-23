@@ -4,4 +4,4 @@
 
 - CSS written in LESS. Primary styling for two pages done in their directories. 
 
-- JS compnents used for full-page carousel. Hamburger menu and about page animations done in JS also.
+- JS components used for full-page carousel. Hamburger menu and about page animations done in JS also
