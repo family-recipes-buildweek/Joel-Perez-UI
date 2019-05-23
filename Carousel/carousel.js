@@ -16,7 +16,7 @@ class Carousel{
             clearInterval(this.interval)
         })
         this.content = document.querySelector('.main-content')
-        this.interval = setInterval(() => this.scrollRight(), 5000);
+        this.interval = setInterval(() => this.scrollRight(), 7000);
     }
     scrollRight(){
         TweenMax.to(this.content, 0.5, {opacity:0})

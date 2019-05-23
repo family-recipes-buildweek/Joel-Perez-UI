@@ -254,6 +254,9 @@ body {
   height: 25px;
   color: white;
 }
+.nav-bar .nav-container .container-right a:hover {
+  background: black;
+}
 @media (max-width: 800px) {
   .nav-bar .nav-container .container-right a {
     width: 70%;
