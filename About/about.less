@@ -1,0 +1,54 @@
+.team{
+    // margin-top: 50px;
+    top: 50px;
+    .team-member{
+        // .flex();
+        display: none;
+        width: auto;
+        height: auto;
+        margin: 10px 0;
+        // border: 1px solid #d84f00;
+        img{
+            max-height: 140px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .pii{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 50%;
+            .name{
+                color: white;
+                font-size: 3rem;
+                // line-height: 145px;
+            }
+            p{
+                // width: 50%;
+                margin-top: 10px;
+                color: #93c0e9;
+                font-size: 1.6rem;
+                vertical-align: middle;
+                padding: 0 5%;
+                line-height: 2rem;
+            }
+        }
+        .github {
+            margin: 50px 20px;
+        }
+        @media @bigTablet {
+            height: auto;
+        }
+        @media @tablet{
+            height: auto;
+            margin: 20px 0;
+        }
+        @media @phone{
+            height: auto;
+            margin: 10px 0;
+        }
+    }
+    @media @phone{
+        margin-top: 40px;
+    }
+}

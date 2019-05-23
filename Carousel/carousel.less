@@ -1,75 +1,240 @@
-.carousel {
-    .width-100();
-    // height: 1000px;
-    .flex(center, center);
-    // position: relative;
-    overflow: hidden;
-    // margin-top: 16px;
-    z-index: 0;
-    @media(min-width: 1200px){
-      width: 1200px;
+
+.container{
+    .carousel {
+        .width-100();
+
+        .flex(center, center);
+        position: relative;
+        overflow: hidden;
+        // margin-top: 16px;
+        z-index: 0;
+        // @media(min-width: 1200px){
+        //   width: 1200px;
+        // }
+        .left-button, .right-button {
+        .flex(center);
+        color: grey;
+        background-color: rgba(0, 0, 255, 0);
+        opacity: 0.8;
+        font-size: 4rem;
+        line-height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        user-select: none;
+        &:hover {
+            color: white;
+            // background-color: blue;
+            // border: 2px solid blue;
+        }
+        }
+        .left-button {
+        top: 50%; 
+        left: 25px;
+        transform: translate(0, -50%);
+        z-index: 100;
+        // @media @bigTablet{
+        //     top: 30%
+        // }
+        // @media @tablet{
+        //     top: 25%;
+        // }
+        // @media @phone{
+        //     top: 20%
+        // }
+        }
+        .right-button {
+        top: 50%; 
+        right: 25px;
+        transform: translate(0, -50%);
+        z-index: 100;
+        // @media @bigTablet{
+        //     top: 30%
+        //     }
+        // @media @tablet{
+        //     top: 25%;
+        // }
+        // @media @phone{
+        //     top: 20%
+        // }
+        }
+        img {
+        // height: 1080px;
+        width: 100%;
+        display: none;
+        }
     }
-    .left-button, .right-button {
-      .flex(center);
-      color: white;
-      background-color: black;
-      opacity: 0.5;
-      font-size: 40px;
-      line-height: 50px;
-      border-radius: 50%;
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      user-select: none;
-      &:hover {
+
+    .main-content{
+        .flex(center, center, column);
+        z-index: 1;
         color: white;
-        background-color: blue;
-        border: 2px solid blue;
-      }
+        position: absolute;
+        width: 20%;
+        line-height: 1;
+        top: 10%;
+        left: 75%;
+        h1{
+            margin: 0;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            p{
+                font-size: 4rem;
+                font-weight: bold;
+                text-align: center;
+                margin: 0;
+            }
+        }
+        p{
+            text-align: center;
+            font-size: 1.6rem;
+            margin-top: 10px
+        }
+        a {
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            line-height: 150%;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 255, 0);
+            width: 80%;
+            border: 2px solid white;
+            height: 35px;
+            color: white;
+            &:hover {
+                color: white;
+                background-color: black;
+                // border: 2px solid blue;
+        
+            }
+            @media @tablet{
+                font-size: 1.7rem;
+                top: 61%;
+                left: 15%;
+            }
+            @media @phone{
+                width: 80%;
+                top: 50%;
+                left: 25%;
+            }
+        }
+        @media @tablet{
+            top: 61%;
+            left: 15%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
     }
-    .left-button {
-      top: 50%; 
-      left: 25px;
-      transform: translate(0, -50%);
+    .contentIndex1{
+        top: 7%;
+        left: 15%;
+        @media @tablet{
+            top: 61%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
     }
-    .right-button {
-      top: 50%; 
-      right: 25px;
-      transform: translate(0, -50%);
+
+    .contentIndex2{
+        top: 10%;
+        left: 15%;
+        @media @tablet{
+            top: 61%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
     }
-    img {
-      .width-100();
-      display: none;
+
+    .contentIndex3{
+        top: 43%;
+        left: 10%;
+        @media @tablet{
+            top: 61%;
+            left: 15%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
     }
+
+    .contentIndex3{
+        top: 36%;
+        left: 73%;
+        @media @tablet{
+            top: 61%;
+            left: 15%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
+    }
+
+    .contentIndex0{
+        top: 10%;
+        left: 75%;
+        @media @tablet{
+            top: 61%;
+            left: 15%;
+        }
+        @media @phone{
+            width: 40%;
+            top: 50%;
+            left: 25%;
+        }
+    }
+
+    .tablet-content{
+        display: none;
+        color: white;
+        position: absolute;
+        width: 25%;
+        bottom: 10%;
+        right: 20%;
+        h2{
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        p{
+            font-size: 1.6rem;
+            padding-top: 10px;
+            line-height: 2rem;
+        }
+        @media @bigTablet{
+            display:block
+        }
+        @media @phone{
+            display: none;
+        }
+    }
+// @media @container1200{
+//     max-width: 1250px;
+// }
+// @media @container1000{
+//     max-width: 1050px;
+// }
+// @media @container800{
+//     max-width: 820px;
+// }
+// @media @container500{
+//     max-width: 515px;
+// }
 }
 
-.content{
-    z-index: 1;
-    color: white;
-    position: absolute;
-    width: 20%;
-    line-height: 1;
-    top: 15%;
-    left: 15%;
-    h1{
-        margin: 0;
-        font-size: 40px;
-        font-weight: bold;
-        text-align: center;
-    }
-    p{
-        text-align: center;
-    }
-    button {
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 255, 0);
-        width: 100%;
-        border: 1px solid white;
-        height: 35px;
-        color: white;
-    }
-}
